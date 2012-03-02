@@ -77,7 +77,7 @@
 
 #define BYTES_PER_PIXEL 4 // 8888 config
 
-#define LAYER_TEXTURES_DESTROY_TIMEOUT 60 // If we do not need layers for 60 seconds, free the textures
+#define LAYER_TEXTURES_DESTROY_TIMEOUT 40 // If we do not need layers for 60 seconds, free the textures
 
 namespace WebCore {
 
@@ -113,7 +113,7 @@ TilesManager::TilesManager()
     m_tilesTextures.reserveCapacity(MAX_TEXTURE_ALLOCATION);
     m_availableTilesTextures.reserveCapacity(MAX_TEXTURE_ALLOCATION);
     m_pixmapsGenerationThread = new TexturesGenerator();
-    m_pixmapsGenerationThread->run("TexturesGenerator", android::PRIORITY_BACKGROUND);
+    m_pixmapsGenerationThread->run("TexturesGenerator", android::PRIORITY_NORMAL);
 }
 
 void TilesManager::allocateTiles()

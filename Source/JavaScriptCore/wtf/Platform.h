@@ -686,6 +686,8 @@
 #if !defined WTF_USE_ACCELERATED_COMPOSITING
 #define WTF_USE_ACCELERATED_COMPOSITING 1
 #define ENABLE_3D_RENDERING 1
+//#define ENABLE_ACCELERATED_2D_CANVAS 1
+#define ENABLE_SKIA_GPU 1
 #endif
 
 // ENABLE guards
@@ -1248,6 +1250,7 @@
 
 /* Accelerated compositing */
 #if (PLATFORM(MAC) && !defined(BUILDING_ON_TIGER)) || PLATFORM(IOS) || PLATFORM(QT) || (PLATFORM(WIN) && !OS(WINCE) &&!defined(WIN_CAIRO))
+vfgfgfg
 #define WTF_USE_ACCELERATED_COMPOSITING 1
 #endif
 
